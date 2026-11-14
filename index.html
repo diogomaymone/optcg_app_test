@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- black, not black-translucent: iOS then starts the page below the status bar, so no screen or sheet sits under it -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="OP Tracker" />
+    <meta name="theme-color" content="#05070D" />
+    <meta name="referrer" content="no-referrer" />
+    <!-- relative paths: the site lives under /optcg_app_test/ -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icon-180.png" />
+    <title>OP Tracker</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+        background: #05070D;
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* no copy/lookup popup on long presses, swipes and drags; typing fields stay selectable */
+      * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      input,
+      textarea,
+      [contenteditable] {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+      /* no square browser focus ring on the search field and inputs (their rounded box shows focus) */
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+      /* buttons and tiles (Pressable = div with tabindex) ease into and out of their pressed look */
+      [tabindex] {
+        transition: transform 0.12s ease-out, opacity 0.12s ease-out, background-color 0.12s ease-out;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  <meta name="theme-color" content="#05070D">
+<link rel="icon" href="/optcg_app_test/favicon.ico"/></head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+      navigator.storage?.persist?.(); // ask Safari not to evict the collection
+    </script>
+  <script src="/optcg_app_test/_expo/static/js/web/index-a62d3cb1aaf8aef7e1c65508479984ab.js" defer></script>
+</body>
+</html>
